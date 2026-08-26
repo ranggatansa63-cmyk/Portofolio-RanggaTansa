@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio Rangga Tansa Trisna</title>
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+    }
+    body {
+      background: #f1f5f9;
+      display: flex;
+      justify-content: center;
+      padding: 2rem 1rem;
+      color: #0f172a;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1100px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 2.5rem;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
+      padding: 2.5rem 2rem;
+    }
+    /* ===== PROFILE ===== */
+    .profile-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 2px solid #eef2f6;
+    }
+    .avatar {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+      background: linear-gradient(145deg, #2563eb, #7c3aed);
+      box-shadow: 0 12px 28px -8px rgba(37,99,235,0.3);
+    }
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
+    }
+    .profile-info h1 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .profile-info .title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #2563eb;
+      background: #eef2ff;
+      display: inline-block;
+      padding: 0.2rem 1.4rem;
+      border-radius: 40px;
+      margin: 0.3rem 0 0.5rem 0;
+    }
+    .profile-info p {
+      color: #334155;
+      max-width: 500px;
+      text-align: justify;
+      text-justify: inter-word; 
+      hyphens: auto; 
+      word-spacing: 0.5px; 
+    }
+    .profile-info .contact-mini {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 0.6rem;
+      font-size: 0.95rem;
+      color: #1e293b;
+    }
+    .profile-info .contact-mini i {
+      color: #2563eb;
+      width: 1.4rem;
+    }
+    .social-links {
+      display: flex;
+      gap: 0.7rem;
+      margin-top: 0.8rem;
+    }
+    .social-links a {
+      display: inline-flex;
+      width: 42px;
+      height: 42px;
+      border-radius: 40px;
+      background: #f1f5f9;
+      color: #1e293b;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      transition: 0.2s;
+      text-decoration: none;
+    }
+    .social-links a:hover {
+      background: #2563eb;
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 16px -6px #2563eb60;
+    }
+
+    /* ===== SECTION TITLE ===== */
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 2.2rem 0 1.2rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      color: #0f172a;
+    }
+    .section-title i {
+      color: #2563eb;
+      font-size: 1.6rem;
+      width: 2rem;
+    }
+
+    /* ===== CARD UMUM ===== */
+    .card-item {
+      background: #f8fafc;
+      border-radius: 1.5rem;
+      padding: 1.5rem 1.8rem;
+      margin-bottom: 1.2rem;
+      border-left: 5px solid #2563eb;
+      transition: 0.2s;
+      border: 1px solid #eef2f6;
+      border-left-width: 6px;
+    }
+    .card-item:hover {
+      background: #ffffff;
+      box-shadow: 0 8px 20px -10px rgba(0,0,0,0.06);
+    }
+    .card-item h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .card-item .sub {
+      font-weight: 500;
+      color: #2563eb;
+      font-size: 0.95rem;
+    }
+    .card-item .date {
+      font-size: 0.85rem;
+      color: #64748b;
+      background: #eef2f6;
+      padding: 0.1rem 0.9rem;
+      border-radius: 40px;
+      font-weight: 500;
+    }
+    .card-item p, .card-item ul {
+      margin-top: 0.5rem;
+      color: #334155;
+    }
+    .card-item ul {
+      padding-left: 1.2rem;
+      list-style-type: disc;
+    }
+    .card-item ul li {
+      margin-bottom: 0.2rem;
+    }
+
+    /* ===== SKILLS ===== */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0.8rem;
+      margin-top: 0.3rem;
+    }
+    .skill-tag {
+      background: #f1f5f9;
+      padding: 0.6rem 1rem;
+      border-radius: 60px;
+      font-weight: 500;
+      color: #1e293b;
+      border: 1px solid #e2e8f0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.95rem;
+      transition: 0.2s;
+    }
+    .skill-tag i {
+      color: #2563eb;
+      width: 1.4rem;
+      font-size: 1.1rem;
+    }
+    .skill-tag:hover {
+      background: #ffffff;
+      border-color: #2563eb;
+      transform: scale(1.02);
+    }
+
+    /* ===== GALERI SERTIFIKAT ===== */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .gallery-card {
+      background: #ffffff;
+      border-radius: 1.5rem;
+      border: 1px solid #eef2f6;
+      overflow: hidden;
+      transition: 0.25s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 30px -14px rgba(37, 99, 235, 0.15);
+      border-color: #b9d0ff;
+    }
+
+    .gallery-card .thumbnail {
+      width: 100%;
+      height: 180px;
+      background: linear-gradient(145deg, #eef2ff, #dbeafe);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+      color: #2563eb;
+    }
+
+    .gallery-card .thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .gallery-card .gallery-body {
+      padding: 1.2rem 1.5rem 1.5rem;
+    }
+
+    .gallery-card .gallery-body h4 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .gallery-card .gallery-body p {
+      font-size: 0.9rem;
+      color: #64748b;
+      margin-bottom: 0.8rem;
+    }
+
+    .gallery-card .gallery-body .gallery-tag {
+      display: inline-block;
+      background: #eef2ff;
+      color: #2563eb;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .gallery-card .gallery-body .btn-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.8rem;
+      color: #2563eb;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .gallery-card .gallery-body .btn-link:hover {
+      color: #1d4ed8;
+      gap: 0.8rem;
+    }
+
+    /* ===== LINK MBKM ===== */
+    .mbkm-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-top: 0.8rem;
+      background: #f1f5f9;
+      padding: 0.5rem 1.5rem;
+      border-radius: 60px;
+      color: #1e293b;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.2s;
+      border: 1px solid #e2e8f0;
+    }
+
+    .mbkm-link:hover {
+      background: #ffffff;
+      border-color: #2563eb;
+      transform: scale(1.02);
+    }
+
+    .mbkm-link i {
+      color: #2563eb;
+      font-size: 1.2rem;
+    }
+
+    /* ===== TOMBOL DOWNLOAD CV ===== */
+    .cv-section {
+      display: flex;
+      justify-content: center;
+      margin: 0 0 0.5rem 0;
+    }
+
+    .btn-cv {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: #2563eb;
+      color: white;
+      padding: 0.8rem 2.5rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: 0.25s ease;
+      box-shadow: 0 6px 20px -6px rgba(37, 99, 235, 0.4);
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-cv:hover {
+      background: #1d4ed8;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 28px -8px rgba(37, 99, 235, 0.5);
+    }
+
+    .btn-cv i {
+      font-size: 1.2rem;
+    }
+
+    /* ===== SLIDER CAROUSEL ===== */
+    .slider-container {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 8px 30px -12px rgba(0,0,0,0.15);
+      background: #f8fafc;
+    }
+
+    .slider-wrapper {
+      display: flex;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .slider-slide {
+      min-width: 100%;
+      height: 400px;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .slider-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #ffffff;
+      padding: 10px;
+    }
+
+    /* Tombol navigasi */
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.9);
+      border: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      color: #1e293b;
+      cursor: pointer;
+      transition: 0.2s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slider-btn:hover {
+      background: #2563eb;
+      color: white;
+      transform: translateY(-50%) scale(1.05);
+    }
+
+    .slider-btn.prev {
+      left: 12px;
+    }
+
+    .slider-btn.next {
+      right: 12px;
+    }
+
+    /* Indikator titik */
+    .slider-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 0 10px 0;
+    }
+
+    .slider-dots .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #d1d5db;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+      padding: 0;
+    }
+
+    .slider-dots .dot.active {
+      background: #2563eb;
+      width: 28px;
+      border-radius: 20px;
+    }
+
+    .slider-dots .dot:hover {
+      background: #2563eb;
+    }
+
+    /* ===== PROYEK CARD ===== */
+    .project-slider-wrapper {
+      background: #ffffff;
+      border-radius: 1.5rem;
+      border: 1px solid #eef2f6;
+      overflow: hidden;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      margin-bottom: 1.2rem;
+    }
+
+    .project-slider-wrapper .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .project-slider-wrapper .project-header h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .project-slider-wrapper .project-header .sub {
+      font-weight: 500;
+      color: #2563eb;
+      font-size: 0.95rem;
+    }
+
+    .project-slider-wrapper .project-header .date {
+      font-size: 0.85rem;
+      color: #64748b;
+      background: #eef2f6;
+      padding: 0.1rem 0.9rem;
+      border-radius: 40px;
+      font-weight: 500;
+    }
+
+    .project-slider-wrapper .project-desc {
+      color: #334155;
+      margin-bottom: 1rem;
+    }
+
+    .project-slider-wrapper .project-desc ul {
+      padding-left: 1.2rem;
+      list-style-type: disc;
+    }
+
+    .project-slider-wrapper .project-desc ul li {
+      margin-bottom: 0.2rem;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 640px) {
+      .container { padding: 1.5rem 1rem; }
+      .profile-wrap { flex-direction: column; text-align: center; }
+      .profile-info .contact-mini { justify-content: center; }
+      .social-links { justify-content: center; }
+      .profile-info p { margin: 0 auto; }
+      .card-item { padding: 1.2rem; }
+      .section-title { font-size: 1.3rem; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: 1fr 1fr; }
+      .slider-slide { height: 250px; }
+      .slider-btn { width: 34px; height: 34px; font-size: 0.9rem; }
+      .slider-btn.prev { left: 6px; }
+      .slider-btn.next { right: 6px; }
+      .project-slider-wrapper { padding: 1rem; }
+    }
+
+    @media (max-width: 400px) {
+      .skills-grid { grid-template-columns: 1fr; }
+      .btn-cv { width: 100%; justify-content: center; }
+      .slider-slide { height: 200px; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ========== BIODATA PROFILE ========== -->
+  <div class="profile-wrap">
+    <div class="avatar">
+      <img src="assets/images/RanggaTansa.jpeg" alt="Rangga Tansa Trisna">
+    </div>
+    <div class="profile-info">
+      <h1>Rangga Tansa Trisna</h1>
+      <div class="title"><i class="fas fa-code" style="margin-right: 6px;"></i>S1 Informatika</div>
+      <p>Saya mahasiswa S1 Informatika di Universitas Wijaya Kusuma Surabaya, memiliki
+          pengalaman dalam bidang Machine Learning, Basis Data, dan Pengembangan Web.
+          Berpengalaman dalam menganalisis kebutuhan pengguna, kebutuhan sistem, dan
+          pengambilan keputusan dalam menyelesaikan suatu permasalahan.</p>
+      <div class="contact-mini">
+        <span><i class="fas fa-envelope"></i>ranggatansa63@gmail.com</span>
+        <span><i class="fas fa-phone-alt"></i>+62 821 3914 2801</span>
+        <span><i class="fas fa-map-marker-alt"></i>Gresik, Indonesia</span>
+      </div>
+      <div class="social-links">
+        <a href="https://github.com/ranggatansa63-cmyk" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/rangga-tansa-183998334" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/ranggatns_?igsi=bHNmeXRtOHF5b2Q1" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== DOWNLOAD CV ========== -->
+  <div class="cv-section">
+    <a href="assets/CV_Rangga_Tansa.pdf" download class="btn-cv">
+      <i class="fas fa-file-pdf"></i> Download CV (PDF)
+    </a>
+  </div>
+
+  <!-- ========== PENGALAMAN KERJA ========== -->
+  <div class="section-title">
+    <i class="fas fa-briefcase"></i> Pengalaman Kerja
+  </div>
+
+  <div class="card-item">
+    <h3>
+      <span>Daily Worker Steward</span>
+      <span class="sub">Shaburi Kintan Buffet</span>
+      <span class="date">Maret 2025 – April 2025</span>
+    </h3>
+    <ul>
+      <li>Menjaga kebersihan, sanitasi serta ketersediaan seluruh peralatan makan dan alat masak agar operasional dapur berjalan dengan lancar.</li>
+    </ul>
+  </div>
+
+  <!-- ========== PENDIDIKAN ========== -->
+  <div class="section-title">
+    <i class="fas fa-graduation-cap"></i> Pendidikan
+  </div>
+
+  <div class="card-item">
+    <h3>
+      <span>Universitas Wijaya Kusuma Surabaya</span>
+      <span class="sub">• S1 Informatika</span>
+      <span class="date">2022 – 2026 (IPK 3.56/4.00)</span>
+    </h3>
+    <p>Mata kuliah terkait: Pemrograman Web, Basis Data, Machine Learning, Data Science, Interaksi Manusia-Komputer.</p>
+  </div>
+
+  <!-- ========== PENGALAMAN ORGANISASI ========== -->
+  <div class="section-title">
+    <i class="fas fa-users"></i> Pengalaman Organisasi
+  </div>
+
+  <div class="card-item">
+    <h3>
+      <span>Anggota Departemen Penalaran</span>
+      <span class="sub">• BEM Fakultas Teknik</span>
+      <span class="date">2024 – 2025</span>
+    </h3>
+    <ul>
+      <li>Mengkaji dan menelaah dalam bidang akademik maupun non akademik.</li>
+    </ul>
+  </div>
+
+  <div class="card-item">
+    <h3>
+      <span>Ketua Komisi 1 Administrasi dan Akademik</span>
+      <span class="sub">• DPM Fakultas Teknik</span>
+      <span class="date">2025 – 2026</span>
+    </h3>
+    <ul>
+      <li>Memastikan alur berjalannya administrasi organisasi mahasiswa dan urusan akademik mahasiswa berjalan dengan baik dan teratur.</li>
+    </ul>
+  </div>
+
+  <!-- ========== PENGALAMAN SELAMA KULIAH ========== -->
+  <div class="section-title">
+    <i class="fas fa-flask"></i> Pengalaman Selama Kuliah
+  </div>
+
+  <div class="card-item">
+    <h3>
+      <span>Asisten Laboratorium Informatika</span>
+      <span class="sub">• Fakultas Teknik Universitas Wijaya Kusuma Surabaya</span>
+      <span class="date">2024 – 2026</span>
+    </h3>
+    <ul>
+      <li>Mengajar praktikum mata kuliah Basis Data, Jaringan Komputer, Basis Data Lanjut, Algoritma dan Struktur Data, Grafika Komputer, Keamanan Data dan Informasi, Internet Of Thinks, Pemrograman Web, Big Data.</li>
+      <li>Membantu menyusun modul praktikum dan tugas mingguan.</li>
+      <li>Mengurus Operasional Laboratorium</li>
+    </ul>
+  </div>
+
+  <div class="card-item">
+    <h3>
+      <span>Peserta Program MBKM Kewirausahaan</span>
+      <span class="sub">• Kampus Merdeka</span>
+      <span class="date">Oktober 2023 – November 2023</span>
+    </h3>
+    <ul>
+      <li>Melakukan digitalisasi pemasaran umkm dan pengembangan bisnis pada usaha Katering Tansa Trisna.</li>
+    </ul>
+    <a href="https://www.instagram.com/katering.tansatrisna?igsi=MTFtanNybzgybWx3Zg==" target="_blank" class="mbkm-link">
+      <i class="fab fa-instagram"></i> @kateringtansatrisna
+    </a>
+  </div>
+
+  <div class="card-item">
+    <h3>
+      <span>Pembicara Materi Pemrograman Terstruktur</span>
+      <span class="sub">• Pendampingan 2025</span>
+      <span class="date">September 2025</span>
+    </h3>
+    <ul>
+      <li>Memaparkan materi terkait pemrograman terstruktur pada kegiatan pendampingan yang diselenggarakan oleh Himpunan Mahasiswa Informatika 2025-2026</li>
+    </ul>
+  </div>
+
+  <!-- ========== BUKTI PROYEK (SLIDER) ========== -->
+  <div class="section-title">
+    <i class="fas fa-folder-open"></i> Bukti Proyek
+  </div>
+
+  <div class="project-slider-wrapper">
+    <div class="project-header">
+      <div>
+        <h3>Sistem Deteksi BISINDO Real-Time <span class="sub">• Tugas Akhir</span></h3>
+        <span class="date">Agustus 2025 – Juli 2026</span>
+      </div>
+    </div>
+    
+    <div class="project-desc">
+      <ul>
+        <li>Membuat sistem yang bisa mendeteksi bahasa isyarat indonesia berupa pola tangan, yang terfokuskan pada huruf vokal saja dengan output dapat mentranslatekan pola tangan menjadi tampilan huruf.</li>
+      </ul>
+    </div>
+
+    <!-- SLIDER CAROUSEL -->
+    <div class="slider-container">
+      <div class="slider-wrapper" id="sliderWrapper">
+        <div class="slider-slide">
+          <img src="assets/proyek/WhatsApp Image 2026-08-26 at 10.12.36.jpeg" alt="BISINDO Screenshot 1">
+        </div>
+        <div class="slider-slide">
+          <img src="assets/proyek/WhatsApp Image 2026-08-26 at 10.12.55.jpeg" alt="BISINDO Screenshot 2">
+        </div>
+        <div class="slider-slide">
+          <img src="assets/proyek/WhatsApp Image 2026-08-26 at 10.13.40.jpeg" alt="BISINDO Screenshot 3">
+        </div>
+      </div>
+      
+      <!-- Tombol navigasi -->
+      <button class="slider-btn prev" id="prevBtn" aria-label="Previous">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button class="slider-btn next" id="nextBtn" aria-label="Next">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+
+    <!-- Indikator titik -->
+    <div class="slider-dots" id="sliderDots"></div>
+
+    <!-- Link GitHub -->
+<div style="margin-top: 0.8rem; text-align: center;">
+  <a href="https://github.com/ranggatansa63-cmyk/Deteksi-Real-Time" target="_blank" class="mbkm-link" style="margin-top: 0;">
+    <i class="fab fa-github"></i> Lihat Repository GitHub
+  </a>
+</div>
+
+  <!-- ========== SERTIFIKAT ========== -->
+  <div class="section-title">
+    <i class="fas fa-certificate"></i> Sertifikat
+  </div>
+
+  <div class="gallery-grid">
+    <!-- Sertifikat 1: Organisasi BEM -->
+    <div class="gallery-card">
+      <div class="thumbnail" style="background: #ffffff; padding: 0;">
+        <img src="assets/sertifikat/WhatsApp Image 2026-08-25 at 13.18.21.jpeg" alt="Sertifikat BEM Fakultas Teknik" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div class="gallery-body">
+        <h4>Sertifikat BEM Fakultas Teknik</h4>
+        <p>Anggota Departemen Penalaran 2024-2025</p>
+        <span class="gallery-tag">Organisasi</span>
+        <a href="assets/sertifikat/WhatsApp Image 2026-08-25 at 13.18.21.pdf" target="_blank" class="btn-link">
+          <i class="fas fa-expand"></i> Lihat Full
+        </a>
+      </div>
+    </div>
+
+    <!-- Sertifikat 2: DPM -->
+    <div class="gallery-card">
+      <div class="thumbnail" style="background: #ffffff; padding: 0;">
+        <img src="assets/sertifikat/sertifikat-dpm.jpg" alt="Sertifikat DPM Fakultas Teknik" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div class="gallery-body">
+        <h4>Sertifikat DPM Fakultas Teknik</h4>
+        <p>Ketua Komisi 1 Administrasi dan Akademik 2025-2026</p>
+        <span class="gallery-tag">Organisasi</span>
+        <a href="assets/sertifikat/sertifikat-dpm.pdf" target="_blank" class="btn-link">
+          <i class="fas fa-expand"></i> Lihat Full
+        </a>
+      </div>
+    </div>
+
+    <!-- Sertifikat 3: Asisten Lab -->
+    <div class="gallery-card">
+      <div class="thumbnail" style="background: #ffffff; padding: 0;">
+        <img src="assets/sertifikat/sertifikat-aslab.jpg" alt="Sertifikat Asisten Laboratorium" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div class="gallery-body">
+        <h4>Sertifikat Asisten Laboratorium</h4>
+        <p>Asisten Lab Informatika 2024-2026</p>
+        <span class="gallery-tag">Asisten Lab</span>
+        <a href="assets/sertifikat/sertifikat-aslab.pdf" target="_blank" class="btn-link">
+          <i class="fas fa-expand"></i> Lihat Full
+        </a>
+      </div>
+    </div>
+
+    <!-- Sertifikat 4: Pembicara -->
+    <div class="gallery-card">
+      <div class="thumbnail" style="background: #ffffff; padding: 0;">
+        <img src="assets/sertifikat/2_20251230_090145_0001.png" alt="Sertifikat Pembicara" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div class="gallery-body">
+        <h4>Sertifikat Pembicara</h4>
+        <p>Pemrograman Terstruktur - Pendampingan 2025</p>
+        <span class="gallery-tag">Pembicara</span>
+        <a href="assets/sertifikat/2_20251230_090145_0001.pdf" target="_blank" class="btn-link">
+          <i class="fas fa-expand"></i> Lihat Full
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== KETERAMPILAN ========== -->
+  <div class="section-title">
+    <i class="fas fa-cogs"></i> Keterampilan
+  </div>
+
+  <div class="skills-grid">
+    <div class="skill-tag"><i class="fas fa-clock"></i> Manajemen Waktu</div>
+    <div class="skill-tag"><i class="fas fa-users"></i> Kerja Sama</div>
+    <div class="skill-tag"><i class="fas fa-brain"></i> Problem Solving</div>
+    <div class="skill-tag"><i class="fas fa-database"></i> Pengolahan Data</div>
+    <div class="skill-tag"><i class="fas fa-sitemap"></i> Keterampilan Organisasi</div>
+    <div class="skill-tag"><i class="fas fa-handshake"></i> Mampu Bekerja Tim</div>
+    <div class="skill-tag"><i class="fab fa-git-alt"></i> Git & GitHub</div>
+    <div class="skill-tag"><i class="fab fa-python"></i> Python</div>
+    <div class="skill-tag"><i class="fab fa-html5"></i> HTML</div>
+  </div>
+
+  <!-- ========== FOOTER ========== -->
+  <div style="margin-top: 2.8rem; border-top: 1px solid #e2e8f0; padding-top: 1.8rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+    <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; color: #475569; font-size: 0.95rem;">
+      <span><i class="fas fa-envelope" style="color: #2563eb;"></i> ranggatansa63@gmail.com</span>
+      <span><i class="fas fa-phone-alt" style="color: #2563eb;"></i> +62 821 3914 2801</span>
+      <span><i class="fas fa-map-pin" style="color: #2563eb;"></i> Gresik, ID</span>
+    </div>
+    <a href="https://wa.me/6282139142801" target="_blank" style="background: #25D366; color: white; padding: 0.6rem 2rem; border-radius: 80px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.6rem; box-shadow: 0 6px 16px -6px #25D36670;">
+      <i class="fab fa-whatsapp"></i> WhatsApp
+    </a>
+  </div>
+
+  <div style="margin-top: 1.2rem; text-align: center; font-size: 0.8rem; color: #94a3b8;">
+    <i class="far fa-copyright"></i> 2026 — Portofolio Rangga Tansa Trisna
+  </div>
+
+</div>
+
+<!-- ========== JAVASCRIPT SLIDER ========== -->
+<script>
+  const sliderWrapper = document.getElementById('sliderWrapper');
+  const slides = document.querySelectorAll('.slider-slide');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const dotsContainer = document.getElementById('sliderDots');
+
+  let currentIndex = 0;
+  const totalSlides = slides.length;
+  let autoSlideInterval;
+
+  // Buat indikator titik
+  function createDots() {
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement('button');
+      dot.classList.add('dot');
+      if (i === 0) dot.classList.add('active');
+      dot.setAttribute('data-index', i);
+      dot.addEventListener('click', function() {
+        goToSlide(i);
+      });
+      dotsContainer.appendChild(dot);
+    }
+  }
+  createDots();
+
+  const dots = document.querySelectorAll('.dot');
+
+  // Fungsi pindah slide
+  function goToSlide(index) {
+    if (index < 0) index = totalSlides - 1;
+    if (index >= totalSlides) index = 0;
+    currentIndex = index;
+    sliderWrapper.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
+    
+    // Update aktif dots
+    dots.forEach(function(dot, i) {
+      if (i === currentIndex) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
+  }
+
+  // Tombol prev
+  prevBtn.addEventListener('click', function() {
+    goToSlide(currentIndex - 1);
+    resetAutoSlide();
+  });
+
+  // Tombol next
+  nextBtn.addEventListener('click', function() {
+    goToSlide(currentIndex + 1);
+    resetAutoSlide();
+  });
+
+  // Auto slide setiap 3 detik
+  function startAutoSlide() {
+    autoSlideInterval = setInterval(function() {
+      goToSlide(currentIndex + 1);
+    }, 3000);
+  }
+
+  function resetAutoSlide() {
+    clearInterval(autoSlideInterval);
+    startAutoSlide();
+  }
+
+  // Mulai auto slide
+  startAutoSlide();
+
+  // Hentikan auto slide saat hover
+  const sliderContainer = document.querySelector('.slider-container');
+  sliderContainer.addEventListener('mouseenter', function() {
+    clearInterval(autoSlideInterval);
+  });
+  sliderContainer.addEventListener('mouseleave', function() {
+    startAutoSlide();
+  });
+</script>
